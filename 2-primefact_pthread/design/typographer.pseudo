@@ -1,0 +1,22 @@
+procedure imprimir_compuesto(compuesto*)
+  print(numero)
+  Imprime el factor y cuenta su frecuencia y la imprime. 
+end procedure
+
+procedure imprimir_invalido(entrada*)
+  Si está fuera de rango
+    print("invalid number") 
+  Sino está fuera del rango
+    print(numero)
+    Caso primo: print(factor)
+    Caso negativo: print("invalid number")
+    Caso especial: print("NA")
+end procedure
+
+procedure imprimir(entradas*)
+  Itera el arreglo de entradas de inicio a fin-1
+    Si es compuesto
+      Invoca a imprimir_compuesto(entrada)
+    Sino ==> invoca a imprimir_invalido(entrada)
+end procedure
+

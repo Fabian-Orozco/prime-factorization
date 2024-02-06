@@ -1,0 +1,49 @@
+procedure create_pthreads(thread_count, entradas[])
+  // arreglo de hilos
+  threads[thread_count]
+  // arreglo de datos privados (corresponden a cada hilo respectivamente)
+  private_data[thread_count]
+
+  if (threads && private_data)
+    repartir_trabajo(private_data, thread_count, entradas[])
+    verificar_factorización
+end procedure
+
+procedure repartir_trabajo(private_data_array[], thread_count, entradas[])
+  // declare thread_count := shared_data->thread_count
+  // declare arr_size := entradas.count-1
+
+  // cantidad minima de trabajo para cada hilo
+  trabajo_por_hilo := arr_size / thread_count
+  
+  // cantidad de hilos que harán un trabajo más que los demás
+  threads_work_max := arr_size % thread_count
+  
+  // cantidad de hilos que hacen la cantidad minima de trabajo
+  threads_work_min := thread_count - threads_work_max
+
+  // indice que asigna el inicio y final de cada hilo
+  declare marcador := 0
+  // lleva la cuenta del hilo actual
+  declare thread_number := 0
+
+  // recorre arreglo
+  while thread_number < thread_count do    
+    // ya recorrió los que trabajan el mínimo
+    if thread_number == threads_work_min
+      ++trabajo_por_hilo
+      threads_work_min := 0 // para que nunca más vuelva a entrar al if
+    end if
+    
+    private_data_array[thread_number]->inicio = marcador;
+    marcador += trabajo_por_hilo // aumenta contador según qty de trabajo
+    private_data_array[thread_number]->fin = marcador++;
+    ++thread_number
+  end while
+end procedure
+
+procedure init_shared_data(argc, argv)
+  declare and initialize shared_data
+  shared_data->thread_count := validar_argumentos(argc, argv) 
+  return shared data
+end procedure

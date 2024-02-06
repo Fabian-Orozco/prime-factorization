@@ -1,0 +1,22 @@
+procedure validar_argumentos(argc, argv[])
+  declare shared pthreads_count := default_cpu_max
+  if argc == 2
+    pthreads_count := argv[1]
+  return pthreads_count
+end procedure
+
+procedure almacenar_entrada(entradas*, valor)
+  crea una entrada
+  inicializa la entrada según su categoría
+  añade la entrada al arreglo de entradas.
+end procedure
+
+procedure validar_entrada(FILE, entradas*)
+  Mientras no sea el final del archivo
+    Verificar cada línea del archivo
+    Si es entero de 64 bits con signo y su rango es válido {-2^63, ..., 2^63-1}:
+        Categoriza e invoca a almacenar entrada 
+    Sino:
+      si es fuera de rango invoca almacenar entrada y resetea errno
+      si es texto invoca a almacenar entrada y flushea la entrada
+end procedure
