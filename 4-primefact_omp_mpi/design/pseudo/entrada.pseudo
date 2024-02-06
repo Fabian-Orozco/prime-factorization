@@ -1,0 +1,24 @@
+procedure init(entrada, valor, categoria)
+  // para: primo, negativo o compuesto
+  valor_entrada := valor
+  categoria_entrada := categoria
+  si la categoria es compuesto
+    inicializa arreglo de factores
+end procedure
+
+procedure init_nan(entrada, categoria)
+  // para texto o fuera de rango
+  valor_entrada := valor
+  categoria_entrada := categoria
+end procedure
+
+procedure destroy
+  si la categoria es compuesto
+    destruye el arreglo de factores
+  valor_entrada := 0
+  categoria_entrada := 0
+end procedure
+
+procedure append_factor(entrada, factor)
+  invoca a array_int_append(factores_entrada, factor)
+end procedure

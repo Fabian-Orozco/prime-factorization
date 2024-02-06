@@ -1,0 +1,9 @@
+-1: invalid number
+0: NA
+1: NA
+53: 53
+invalid number
+invalid number
+invalid number
+98: 2 7^2
+100: 2^2 5^2

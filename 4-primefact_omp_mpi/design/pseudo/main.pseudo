@@ -1,0 +1,10 @@
+procedure main
+  declare and initialize thread_count
+  declare and initialize array_entradas
+  validar_entrada
+
+  declare and initialize overall_start = dynamic_random()
+  declare and initialize overall_finish = dynamic_random()
+
+  consumir_entradas (reparte trabajo y factoriza).
+end procedure

@@ -1,0 +1,9 @@
+procedure consume(entradas[], thread_count)
+
+  if (entradas.count-1 < thread_count)
+    thread_count := entradas.count-1
+
+  #pragma omp parallel for schedule(dynamic)
+    verificar_factorizacion(entradas[], unidadAFactorizar)
+  end parallel
+end procedure
