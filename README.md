@@ -26,7 +26,7 @@ Considering **three categories of numbers**: one, prime and composite, we are lo
 
 ---
 
-## **User's manual
+## **User's manual**
 
 ### **Compilation:**
 
@@ -110,8 +110,6 @@ donde _input000.txt_ contiene:
 1000
 1024
 ```
-
-![input/output](./design/img/inputOutput.png)
 
 ---
 
