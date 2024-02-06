@@ -1,0 +1,7 @@
+procedure main
+  declare and initialize shared_data
+  declare and initialize array_entradas
+  validar_entrada
+  create pthreads (reparte trabajo y factoriza).
+  imprimir
+end procedure

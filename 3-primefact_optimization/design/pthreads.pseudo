@@ -1,0 +1,32 @@
+procedure create_pthreads(thread_count, entradas[])
+
+  if (entradas.count < thread_count)
+    thread_count := entradas.count-1
+
+  shared next_unit := 0
+  shared can_access_next_unit := create_mutex()
+
+  // arreglo de hilos
+  threads[thread_count]
+
+  if (threads)
+    for 0 to thread_count
+      consume(next_unit, can_access_next_unit entradas[])
+
+end procedure
+
+procedure consume:
+  while true do
+    lock(can_access_next_unit)
+      if next_unit < entradas.count then
+        declare my_unit := next_unit++
+      else
+        unlock(can_access_next_unit)
+        break while
+      end if
+    unlock(can_access_next_unit)
+
+    verificar_factorizacion()
+
+  end while
+end procedure

@@ -1,0 +1,34 @@
+// Se encarga de clasificar los enteros
+procedure asignar_categoria(valor)
+  Devuelve -2 si el valor es 1 o 0
+  Devuelve -3 si el valor es negativo
+  Devuelve -4 si el valor es primo
+  Devuelve -5 si el valor es compuesto
+end procedure
+
+procedure int es_compuesto(valor)
+  Si se puede dividir en un numero distinto a él (excepto el 2)
+    Devuelva Verdadero (1).
+  Sino devuelva Falso (0)
+end procedure
+
+procedure factorizar_compuesto(entrada)
+  Divide entre 2 lo más que pueda y agrega los factores al arreglo de factores.
+  Itera en incrementos de 2 desde 3 hasta la raiz del número (inclusive).
+    Mientras sea divisible entre el factor actual
+      Agrega el factor al arreglo de factores.
+  Si el valor resultante es mayor a dos quiere decir que se llegó a un valor primo
+end procedure
+
+procedure verificar_factorizacion( unit, entradas[] )
+    if entradas[unit] == COMPUESTO
+      factorizar_compuesto(entradas[unit])
+
+  return NULL
+end procedure
+
+procedure contarFrecuencia(factor, factores*, actual)
+  Mientras factores[actual] sea igual a factor: aumente la frecuencia
+    ++frecuencia
+    Retorne la frecuencia
+end procedure

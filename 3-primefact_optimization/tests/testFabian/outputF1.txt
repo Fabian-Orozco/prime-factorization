@@ -1,0 +1,9 @@
+100: 2^2 5^2
+2: 2
+-1: invalid number
+2: 2
+invalid number
+3: 3
+invalid number
+2: 2
+18: 2 3^2
