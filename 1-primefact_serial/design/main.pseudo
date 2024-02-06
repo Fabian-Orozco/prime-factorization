@@ -1,0 +1,9 @@
+procedure main
+  Crear e inicializar arreglo dinámico para los valores enteros
+  Crear e inicializar arreglo dinámico para categorizar los valores
+  Recibir y categorizar los datos ingresados de la entrada estándar
+  Guardar y categorizar los datos en los arreglos respectivos
+  Crear e inicializar arreglo dinámico para mantener los factores de todos los números
+  Realizar la descomposición factorial de los números compuestos
+  Imprimir los resultados según la entrada de datos
+end procedure

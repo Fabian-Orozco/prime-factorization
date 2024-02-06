@@ -1,0 +1,72 @@
+procedure main
+  Crear e inicializar arreglo dinámico para los valores enteros
+  Crear e inicializar arreglo dinámico para categorizar los valores
+  Recibir y categorizar los datos ingresados de la entrada estándar
+  Guardar y categorizar los datos en los arreglos respectivos
+  Crear e inicializar arreglo dinámico para mantener los factores de todos los números
+  Realizar la descomposición factorial de los números compuestos
+  Imprimir los resultados según la entrada de datos
+end procedure
+
+procedure validar_entrada(valores[], categorias[])
+  Mientras no sea el final del archivo
+    Verificar cada línea del archivo
+    Si es entero de 64 bits con signo y su rango es válido {-2^63, ..., 2^63-1}:
+        Categoriza y agrega a los arreglos correspondientes
+    Sino:
+      Deja una "marca" en valores y categorías para saber que se intentó ingresar algo inválido y resetea variables de validación
+end procedure
+
+// Se encarga de clasificar los enteros
+procedure asignar_categoria(valor)
+  Devuelve -1 si el valor es 1 o 0
+  Devuelve -2 si el valor es negativo
+  Devuelve -3 si el valor es primo
+  Devuelve -4 si el valor es compuesto
+end procedure
+
+procedure int es_compuesto(valores[], categorias[])
+  Si se puede dividir en un numero distinto a él (excepto el 2)
+    Devuelva Verdadero (1).
+  Sino devuelva Falso (0)
+end procedure
+
+procedure factorizar(valor, factores[], posicionDelFactor)
+  Divide entre 2 lo más que pueda y agrega los factores al arreglo de factores.
+  Itera en incrementos de 2 desde 3 hasta la raiz del número (inclusive).
+    Mientras sea divisible entre el factor actual
+      Agrega el factor al arreglo de factores.
+      Aumenta la posición del factor.
+  Si el valor resultante es mayor a dos quiere decir que se llegó a un valor primo
+end procedure
+
+procedure verificar_factorizacion(valores[], categorias[], factores[])
+  Itera desde el inicio hasta el final del arreglo de enteros.
+    Verifica categoría (lugar respectivo del segundo arreglo)
+      Si es compuesto lo factoriza
+      Sino: sigue con el siguiente
+end procedure
+
+procedure contarFrecuencia(factor, factores[], posicion)
+  Mientras factores[posicion] sea igual a factor: aumente la frecuencia
+    ++frecuencia
+    Retorne la frecuencia
+end procedure
+
+procedure imprimir_compuesto(factores[], posicion)
+  Verificar contenido del arreglo de factores: 
+    Si es 0 significa que está en los factores de un número anterior, debe avanzar.
+    Sino: imprime el factor y cuenta su frecuencia y la imprime. 
+end procedure
+
+procedure imprimir(valores[], categorias[], factores[])
+  Declara una posicionDelFactor para llevar el orden de factores.
+  Itera el arreglo de valores de inicio a fin
+    Si es válido (entero dentro del rango):
+      Imprima el número
+      Caso compuesto: Invoca a imprimir_compuesto(arg,arg2)
+      Caso primo: print(factor)
+      Caso negativo: print("invalid number")
+      Caso especial: print("NA")
+   Sino ==> Caso inválido: print("invalid number")
+end procedure

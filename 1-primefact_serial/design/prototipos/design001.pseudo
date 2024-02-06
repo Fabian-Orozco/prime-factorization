@@ -1,0 +1,100 @@
+procedure main
+
+  Crear e inicializar arreglo dinámico para los valores enteros
+  Crear e inicializar arreglo dinámico para categorizar los valores
+
+  Recibir datos de la entrada estándar
+  Guardar y categorizar los datos en los arreglos respectivos
+  validar_entrada(valores*, categorias*)
+  
+  Crear e inicializar arreglo dinámico para mantener los factores de todos los números
+  Realizar la descomposición factorial de cada entero/línea válida mediante la subrutina <<calcular>> y relleno el arreglo <<factores>>
+  calcular(valores*, categoria*, factores*).
+
+  imprimir los valores ingresados seguidos de sus respectivos factores o mensajes de error.
+  imprimir(valores*, categoria*, factores*)
+
+end procedure
+
+// se encarga de clasificarlos:
+// -1 significa numero NEGATIVO
+// -2 significa número ESPECIAL (0 o 1)
+// -3 significa número PRIMO 
+// -4 significa número COMPUESTO.
+procedure validar_entrada(FILE*, valores*, categoria*)
+  mientras no sea el final del archivo:
+    verificar cada entero/línea // errno
+    si es entero de 64 bits con signo
+      agregar a <<valores>>
+      verificar su categoría y asignarle la banderilla respectiva en <<categoria>>
+    sino(errno):
+      saltar línea
+      limpiar errno
+      continuar leyendo las siguientes líneas
+end procedure
+
+procedure int es_Factorizable(valores*, categoria*)
+  si (la categoría respectiva != COMPUESTO):
+    retorne falso (1)
+  sino
+    retorne verdadero (1)
+end procedure
+
+procedure factorizar(valor, factores, posicionDelFactor)
+  for factor = 2 to valor > 1 ; ++factor do
+    mientras valor % i == 0
+      factores[posicion++] = i;
+      valor /= i
+  // Cuando ya no puede factorizar más un número (tiene que iterar el for)
+  // factores[posicion] = -1;
+    
+end procedure
+
+procedure calcular(valores*, categoria*, factores*)
+  for inicio := 0 to finalDelArreglo do
+    verifica categoría (lugar respectivo del segundo arreglo)
+      si es_Factorizable(valor)
+        factorizar(valores[posicion], factores*)
+      sino 
+        aumente contadores de ambos arreglos
+end procedure
+
+procedure int contarFrecuencia(factor, factores*, posicion)
+  si factor es -1: ya no hay más factores porque sigue un número nuevo
+    return 0
+  sino:
+    declara frecuencia
+    mientras factores[posicion] == factor
+      ++frecuencia
+    return frecuencia
+end procedure
+
+procedure imprimir(valores*, categoria*, factores*)
+
+  <<int frecuencia>> cantidad de veces que se repite el factor.
+
+  <<contadorFact>> el cual itera sobre el arregloDeFactores
+
+  for contador := 0 to final de valores* do 
+    por cada valor del arreglo
+      print(valor: )
+        // caso compuesto
+        <<factor>> = factores[contadorFact] //factor actual
+        print(factor)
+        frecuencia = contarFrecuencia(factor, factores*, contadorFact)
+        if (frecuencia)
+          contadorFact := contadorFact + frecuencia.
+          print("^"frecuencia" ");
+        else 
+          ++contadorFact //está en un nuevo número 
+        
+        // caso primos
+        print(factor)
+        
+        //caso negativos
+        print("invalid number")
+
+        //caso especial
+        print("NA")
+
+end procedure
